@@ -1,0 +1,109 @@
+{
+  "Logistic Regression": {
+    "best_params": {
+      "classifier__C": 10
+    },
+    "cv_f1_weighted": 0.7591,
+    "test_metrics": {
+      "Accuracy": 0.7675,
+      "Balanced accuracy": 0.7667,
+      "Precision (weighted)": 0.7703,
+      "Recall (weighted)": 0.7675,
+      "F1 (weighted)": 0.7685,
+      "F1 (macro)": 0.7678,
+      "ROC-AUC (OVR)": 0.9182
+    },
+    "roc_auc_micro": 0.9269,
+    "confusion_matrix": [
+      [
+        103,
+        29,
+        0
+      ],
+      [
+        20,
+        89,
+        23
+      ],
+      [
+        1,
+        20,
+        115
+      ]
+    ],
+    "model_path": "../models/logistic_regression.joblib"
+  },
+  "Random Forest": {
+    "best_params": {
+      "classifier__max_depth": 10,
+      "classifier__min_samples_split": 5,
+      "classifier__n_estimators": 200
+    },
+    "cv_f1_weighted": 0.6959,
+    "test_metrics": {
+      "Accuracy": 0.6825,
+      "Balanced accuracy": 0.6814,
+      "Precision (weighted)": 0.6811,
+      "Recall (weighted)": 0.6825,
+      "F1 (weighted)": 0.6818,
+      "F1 (macro)": 0.6807,
+      "ROC-AUC (OVR)": 0.8689
+    },
+    "roc_auc_micro": 0.8831,
+    "confusion_matrix": [
+      [
+        97,
+        32,
+        3
+      ],
+      [
+        37,
+        69,
+        26
+      ],
+      [
+        1,
+        28,
+        107
+      ]
+    ],
+    "model_path": "../models/random_forest.joblib"
+  },
+  "XGBoost": {
+    "best_params": {
+      "classifier__learning_rate": 0.05,
+      "classifier__max_depth": 3,
+      "classifier__n_estimators": 400,
+      "classifier__subsample": 0.8
+    },
+    "cv_f1_weighted": 0.7171,
+    "test_metrics": {
+      "Accuracy": 0.7125,
+      "Balanced accuracy": 0.7113,
+      "Precision (weighted)": 0.7068,
+      "Recall (weighted)": 0.7125,
+      "F1 (weighted)": 0.7089,
+      "F1 (macro)": 0.7077,
+      "ROC-AUC (OVR)": 0.8867
+    },
+    "roc_auc_micro": 0.8969,
+    "confusion_matrix": [
+      [
+        103,
+        27,
+        2
+      ],
+      [
+        38,
+        69,
+        25
+      ],
+      [
+        0,
+        23,
+        113
+      ]
+    ],
+    "model_path": "../models/xgboost.joblib"
+  }
+}
