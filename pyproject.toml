@@ -18,5 +18,5 @@ dev = [
     "ipykernel>=7.4.0",
 ]
 airflow = [
-    "apache-airflow>=2.9",
+    "apache-airflow[postgres]>=3.4,<4",
 ]

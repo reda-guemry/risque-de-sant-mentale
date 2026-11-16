@@ -16,16 +16,19 @@ st.title("Prédiction du risque en santé mentale")
 st.write("Renseignez le profil de l'étudiant pour estimer son niveau de risque.")
 
 if not BEST_MODEL_PATH.exists():
-    st.error("Aucun modèle trouvé. Lancez d'abord `python -m src.train`.")
+    st.error(
+        "Aucun modèle trouvé. Lancez d'abord `python -m src.train` "
+        "ou `docker compose run --rm trainer`."
+    )
     st.stop()
 
 
 @st.cache_resource
-def get_model():
+def get_model(mtime):
     return load_model()
 
 
-model = get_model()
+model = get_model(BEST_MODEL_PATH.stat().st_mtime)
 
 if RESULTS_PATH.exists():
     summary = json.loads(RESULTS_PATH.read_text(encoding="utf-8"))

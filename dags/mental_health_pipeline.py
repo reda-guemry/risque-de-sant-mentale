@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 # Rend le package `src` importable quand Airflow exécute le DAG
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
