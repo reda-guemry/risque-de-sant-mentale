@@ -7,7 +7,15 @@ from src.config import BEST_MODEL_PATH, TARGET_NAMES
 
 def load_model(path=BEST_MODEL_PATH):
     """Charge le pipeline sauvegardé (prétraitement + classifieur)."""
-    return joblib.load(path)
+    try:
+        return joblib.load(path)
+    except ModuleNotFoundError as exc:
+        raise RuntimeError(
+            f"Impossible de charger le modèle '{path}' : le module "
+            f"'{exc.name}' est absent de l'environnement. "
+            "Reconstruisez l'image avec `docker compose up -d --build` "
+            "ou réentraînez le modèle avec `docker compose run --rm trainer`."
+        ) from exc
 
 
 def predict_proba(model, data):

@@ -13,6 +13,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-apiserver:8080/execution/
     AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:-dev-jwt-secret-change-me}
     AIRFLOW__API_AUTH__JWT_ISSUER: airflow
+    AIRFLOW__API__SECRET_KEY: ${AIRFLOW_API_SECRET_KEY:-dev-api-secret-key-change-me}
   volumes:
     - models_data:/app/models
   depends_on:
